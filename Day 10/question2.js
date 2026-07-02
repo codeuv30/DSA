@@ -14,10 +14,29 @@ const prompt = require("prompt-sync")();
 
 let n = Number(prompt("Enter a number: "));
 
-let length = n.toString().length;
+let str = n.toString();
+let length = str.length;
 
 let sum = 0;
 
-for(let i = 0; i < length; i++) {
-    console.log(i)
+function findFactorial(n) {
+  let fac = 1;
+  let x = n;
+
+  for (let i = 1; i < n; i++) {
+    fac = x * (n - i);
+    x = fac;
+  }
+
+  return fac;
+}
+
+for (let i = 0; i < length; i++) {
+  sum += findFactorial(str.charAt(i));
+}
+
+if (sum === n) {
+  console.log("Yes");
+} else {
+  console.log("No");
 }
