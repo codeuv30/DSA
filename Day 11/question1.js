@@ -1,3 +1,9 @@
+/* QUESTION */
+/* TAKE A NUMBER FROM THE USER */
+/* FIND THE SUM OF EVERY DIGITS IN THAT NUMBER */
+
+/* ANSWER */
+
 const prompt = require("prompt-sync")();
 let n = Number(prompt("Enter a number: "));
 
