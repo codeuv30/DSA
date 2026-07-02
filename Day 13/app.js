@@ -1,6 +1,8 @@
 /* CHECK IF NUMBER IS VALID ISBN NUMBER OR NOT */
 /* WITHOUT EVAL ONLY USE WHILE LOOP NO FOR LOOP */
 
+/* ANSWER */
+
 let isbn = "978-93-6033-379-9";
 
 let number = isbn.split("-").join("");
