@@ -11,6 +11,7 @@
 /* MEANS YOU HAVE TO PRINT THIS PATTERN WITH THE NUMBER OF ROWS YOU GET FROM USER */
 
 /* ANSWER */
+
 const prompt = require("prompt-sync")();
 let n = Number(prompt("Enter a number: "));
 
