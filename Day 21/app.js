@@ -38,7 +38,7 @@ console.log(arr); */
 
 /* INSERTION SORT */
 
-let arr = [ 9, 8, 1, 4, 10, 23 ];
+/* let arr = [ 9, 8, 1, 4, 10, 23 ];
 let n = arr.length;
 
 for(let i = 1; i < n; i++) {
@@ -54,4 +54,4 @@ for(let i = 1; i < n; i++) {
     arr[j + 1] = key;
 }
 
-console.log(arr); 
+console.log(arr);  */
