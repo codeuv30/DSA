@@ -21,6 +21,6 @@ for(let i = 1; i<=n; i++) {
         else if((i + j) === n+1) process.stdout.write("*");
         else process.stdout.write(" ");
     }
-    
+ 
     console.log();
 }
