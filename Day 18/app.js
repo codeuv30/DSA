@@ -73,7 +73,7 @@ console.log(arr);
 /* QUESTION 5 */
 /* PRINT THE COUNT OG SUBARRAYS WHO's SUM IS EQUAL TO THE TARGET */
 
-let arr = [1, 2, 3, 7, 5];
+/* let arr = [1, 2, 3, 7, 5];
 
 let count = 0;
 let target = 12;
@@ -99,4 +99,4 @@ for (let i = 0; i < arr.length; i++) {
 }
 
 console.log(count);
-console.log(subArrays);
+console.log(subArrays); */
