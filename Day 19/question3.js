@@ -16,6 +16,7 @@ for(let i = 1; i < (arr.length / 2) + 1; i++) {
     firstArr.push(arr[i - 1]);
     secondArr.push(arr[arr.length - i]);
 }
+
 for(let i = 0; i < firstArr.length; i++) {
     sumOfFirstArray += firstArr[i];
 }
