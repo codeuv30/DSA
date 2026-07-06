@@ -68,19 +68,19 @@ class Solution {
 
         for (let j = 0; j < group.length; j++) {
           sum += Number(group.charAt(j));
-          concatenate += sum;
-          i += k;
         }
+
+        concatenate += sum;
+        i += k;
       }
 
       s = concatenate;
     }
-
-    console.log(s);
 
     return s;
   }
 }
 
 let solution = new Solution();
-let ans = solution.digitSum("11111222233", 3);
+let ans = solution.digitSum("11111222223", 3);
+console.log(ans)
