@@ -199,3 +199,153 @@ let ans = solution.decodeMessage({ a: 'b', b: 'c', c: 'd', d: 'e', e: 'f' }, "ab
 /* console.log(ans); */
 
 /* QUESTION 7 */
+
+/* class Solution {
+    distributeCandies(n, k, candies) {
+        let map = new Map();
+        let ans = 0;
+        let count = 0;
+
+        
+        for(let i = 0; i < candies.length; i++) {
+            map.set(candies[i], ((map.get(candies[i])) || 0) + 1);
+        }
+
+        if(map.size < k) return ans;
+
+        while(n >= k) {
+            for(let key of map.keys()) {
+                if(map.get(key) > 0) {
+                        map.set(key, (map.get(key)) - 1);
+                        n = n - 1;
+                        count += 1;
+
+                        if(count == k) {
+                            count = 0;
+                            ans += 1;
+                        }
+                } else continue;
+            }
+        }
+
+        return ans;
+    }
+}
+ */
+/* const solution = new Solution();
+let ans = solution.distributeCandies(7, 3, [1, 1, 2, 2, 3, 3, 4]) */
+
+/* console.log(ans); */
+
+/* 6, 2, [1, 1, 1, 1, 1, 1] */
+/* 7, 3, [1, 1, 2, 2, 3, 3, 4] */
+
+
+/* QUESTION 8 */
+
+/* class Solution {
+    kthDistinct(arr, k) {
+        let map = new Map();
+        let newArr = [];
+
+        for(let i = 0; i < arr.length; i++) {
+            map.set(arr[i], (((map.get(arr[i])) || 0) + 1));
+        }
+
+        for(let key of map.keys()) {
+            let value = map.get(key);
+
+            if(value > 1) {
+                map.delete(key);
+            } else {
+                newArr.push(key);
+            }
+        }
+
+        let result =  newArr[ k - 1 ];
+
+        if(!result) result = "None"
+
+        return result;
+    }
+}
+
+const solution = new Solution();
+let ans = solution.kthDistinct(['m', 'n', 'o', 'n', 'p', 'm'], 2) */
+// Counts: m=2, n=2, o=1, p=1
+// Distinct list: [o, p] → k=2 → Output: "p"
+
+/* console.log(ans); */
+
+/* ['a', 'b', 'c', 'd', 'a', 'b', 'e'], 2 */
+
+
+
+/* QUESTION 9 */
+
+/* class Solution {
+    wordPattern(pattern, s) {
+        pattern = pattern.split("");
+        s = s.split(" ");
+
+        if(pattern.length != s.length) return false;
+
+        let charToWord = new Map();
+        let wordToChar = new Map();
+
+        for(let i = 0; i < s.length; i++) {
+            if(!charToWord.has(pattern[i]) && !wordToChar.has(s[i])) {
+                charToWord.set(pattern[i], s[i]);
+                wordToChar.set(s[i], pattern[i]);
+                continue;
+            } else {
+                let charToWordValue = charToWord.get(pattern[i]);
+                let currentWord = s[i];
+
+                if(charToWordValue !== currentWord) return false;
+            }
+        }
+
+        return true;
+    }
+} */
+
+/* let solution = new Solution();
+let ans = solution.wordPattern("abbab", "dog cat cat dog dog"); */
+
+/* console.log(ans); */
+
+/* QUESTION 10 */
+
+/* class Solution {
+    findErrorNums(nums) {
+        let map = new Map();
+        let missing = null;
+        let duplicate = null;
+        let n = Math.max(...nums);
+
+        for(let i = 0; i < nums.length; i++) {
+            let current = nums[i];
+            let value = (((map.get(current)) || 0) + 1);
+
+            map.set(current, value);
+        }
+
+        for(let key of map.keys()) {
+            let value = map.get(key);
+
+            if(value > 1) duplicate = key;
+        }
+
+        for(let i = 0; i <= n; i++) {
+            if(!map.has(i)) missing = i;
+        }
+
+        return [duplicate, missing]
+    }
+} */
+
+/* let solution = new Solution();
+let ans = solution.findErrorNums([5, 4, 3, 2, 2]); */
+
+/* console.log(ans); */
