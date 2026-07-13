@@ -37,3 +37,23 @@ console.log(ans); */
 /* console.log(15 >> 2); */ // 3
 /* console.log(25 >> 2); */ // 6
 /* console.log(25 << 2); */ // 100
+
+/* ODD OR EVEN CHECK USING BITWISE OPERATOR */
+
+/* let prompt = require('prompt-sync')();
+let n = Number(prompt("Give a number: "));
+
+if((n & 1) === 0) {
+    console.log("EVEN");
+} else {
+    console.log("ODD");
+} */
+
+/* CHECK SET BIT OR NOT */
+
+let prompt = require('prompt-sync')();
+let n = Number(prompt("Give a number: "));
+let i = Number(prompt("Give a number: "));
+
+if(((n >> i) & 1) === 1) console.log("Set Bit");
+else console.log('Not Set Bit')
