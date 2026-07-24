@@ -17,13 +17,16 @@ var threeSum = function (arr) {
     while (j < k) {
       let sum = arr[i] + arr[j] + arr[k];
 
-      if (sum < 0) j++;
-      if (sum > 0) k--;
-
-      if (sum == 0) {
-        ans.push(arr[i], arr[j], arr[k]);
+      if (sum < 0) {
+        j++;
+      } else if (sum > 0) {
+        k--;
+      } else {
+        ans.push([arr[i], arr[j], arr[k]]);
         j++;
         k--;
+        while (j < k && arr[j] == arr[j - 1]) j++;
+        while (j < k && arr[k] == arr[k + 1]) k--;
       }
     }
   }
