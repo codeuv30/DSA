@@ -1,1 +1,2 @@
-Saving 22 Day Steak on 11:11
+Saving 57 Day Steak on 6:40
+Reason: Understanding merge sort and it is taking time
