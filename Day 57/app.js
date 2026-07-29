@@ -1,34 +1,34 @@
-function divide(arr, st, en) {
+function divide(arr, first, last) {
 
-    if(st >= en) return;
+    if(first >= last) return;
 
-    let mid = Math.floor((st + en) / 2);
-    divide(arr, st, mid);
-    divide(arr, mid + 1, en);
+    let mid = Math.floor((first + last) / 2);
 
-    merge(arr, st, mid, en);
+    divide(arr, first, mid);
+    divide(arr, mid + 1, last);
+
+    merge(arr, first, mid, last);
 
 }
 
-function merge(arr, st, mid, en) {
+function merge(arr, first, mid, last) {
+    let temp = new Array(last - first + 1);
 
-    let mergedArray = new Array(en - st + 1);
+    let i = first, j = mid + 1, k = 0;
 
-    let i = st;
-    let j = mid + 1;
-    let k = 0;
-
-    while(i <= mid && j <= en) {
-        if(arr[i] <= arr[j]) mergedArray[k++] = mergedArray[i++];
-        else arr[k++] = mergedArray[j++];
+    while(i <= mid && j <= last) {
+        if(arr[i] < arr[j]) temp[k++] = arr[i++];
+        else temp[k++] = arr[j++];
     }
 
-    while(i <= mid) mergedArray[k++] = mergedArray[i++];
-    while(j <= en) mergedArray[k++] = mergedArray[j++];
+    while(i <= mid) temp[k++] = arr[i++];
+    while(j <= last) temp[k++] = arr[j++];
 
-    for(let i = 0; i < mergedArray.length; i++) arr[i] = mergedArray[i];
+    i = first, k = 0;
+
+    while(k < temp.length) arr[i++] = temp[k++];
 }
 
-let arr = [6, 3, 7, 4, 7, 2];
+let arr = [10, 5, 1, 9, 14, 6, 19, 12];
 divide(arr, 0, arr.length - 1);
 console.log(arr);
