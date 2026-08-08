@@ -18,6 +18,7 @@ function merge(arr, first, mid, last) {
 
     while(i <= mid && j <= last) {
         if(arr[i] < arr[j]) temp[k++] = arr[i++];
+        
         else temp[k++] = arr[j++];
     };
 
